@@ -3,47 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Chuck Norris API</title>
+    <link rel="stylesheet" href="https://use.typekit.net/qis4qci.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="https://assets.webiconspng.com/uploads/2017/09/Chuck-Norris-PNG-Image-34465.png">
     <script src="js/jquery.js"></script>
     <script>
-        $(document).ready(function (){
-            $.getJSON("https://api.chucknorris.io/jokes/categories", function (data){
+        $(document).ready(function () {
+            $.getJSON("https://api.chucknorris.io/jokes/categories", function (data) {
                 $("#categories").append("<option value=''>----------</option>");
-                for (let i= 0; i < data.length; i++){
-                    $.getJSON("https://api.chucknorris.io/jokes/random?category="+data[i],function (temp){
-                        $("#categoryList").append("<li style='font-weight: bold'>"+data[i]+":</li>");
-                        $("#categoryList").append("<li>"+temp.value+"</li>");
+                for (let i = 0; i < data.length; i++) {
+                    $.getJSON("https://api.chucknorris.io/jokes/random?category=" + data[i], function (temp) {
+                        $("#categoryList").append("<li style='font-weight: bold; color: #C00000; padding: 0.7rem 0; text-decoration: underline;'>" + data[i] + ":</li>");
+                        $("#categoryList").append("<li>" + temp.value + "</li>");
                     });
-                    $("#categories").append("<option value='"+data[i]+"'>"+data[i]+"</option>");
+                    $("#categories").append("<option value='" + data[i] + "'>" + data[i] + "</option>");
 
 
                 }
             });
         });
 
-        function generateJokes(){
+        function generateJokes() {
             let inputVal = $("#categories").val();
             let apiRequest = "https://api.chucknorris.io/jokes/random";
 
-            if (inputVal.length >0){
-                apiRequest+="?category="+inputVal;
+            if (inputVal.length > 0) {
+                apiRequest += "?category=" + inputVal;
             }
-            $.getJSON(apiRequest, function (data){
+            $.getJSON(apiRequest, function (data) {
                 $("#response").html(data.value);
             });
         }
 
-        function searchJoke(){
-            let filter= $("#searchWord").val();
-            if (filter.length > 0){
-                $.getJSON("https://api.chucknorris.io/jokes/search?query="+filter,function (data) {
-                    let output= "<ol>";
-                    for (let i=0; i< data.total; i++){
-                        output+="<li>"+data.result[i].value+"</li>";
+        function searchJoke() {
+            let filter = $("#searchWord").val();
+            if (filter.length > 0) {
+                $.getJSON("https://api.chucknorris.io/jokes/search?query=" + filter, function (data) {
+                    let output = "<ol>";
+                    for (let i = 0; i < data.total; i++) {
+                        output += "<li>" + data.result[i].value + "</li>";
                     }
-                    output+="</ol>";
-                    $("#responseSearch").append(output);
+                    output += "</ol>";
+                    $("#responseSearch").html(output);
                 });
-            }else {
+            } else {
                 $("#responseSearch").html("<p style='color: red'>Please insert a word to search.</p>");
             }
 
@@ -53,6 +56,11 @@
 <body>
 <nav id="navigationBar">
     <ul>
+        <li>
+            <a href="https://api.chucknorris.io"><img rel="icon"
+                                                      src="https://assets.webiconspng.com/uploads/2017/09/Chuck-Norris-PNG-Image-34465.png"
+                                                      width="30px" height="30px"></a>
+        </li>
         <li>
             <a a href="#AboutApi">Home</a>
         </li>
@@ -68,27 +76,38 @@
     </ul>
 </nav>
 <section id="AboutApi">
-    <h1>Chuck Norris Jokes API</h1>
-    <p>This Api generates Chuck Noris Jokes</p>
-    <a href="https://api.chucknorris.io">API-Documentation</a>
+    <div>
+        <h1>Chuck Norris Jokes API</h1>
+        <p>This Api generates Chuck Noris Jokes</p>
+        <a id="linkAbout" href="https://api.chucknorris.io">API-Documentation</a>
+    </div>
 </section>
 <section id="generateJokes">
-    <h2>Generates random chuck norris joke on button press</h2>
-    <label for="categories">Choose a category:</label>
-    <select id="categories"></select>
-    <button onclick="generateJokes()">Generate Joke</button>
-    <p id="response"></p>
+    <div>
+        <h2>Generates random chuck norris joke on button press</h2>
+        <div id="generateJokesContent">
+            <label for="categories">Choose a category:</label>
+            <select id="categories"></select>
+            <button class="btnGenerate" onclick="generateJokes()">Generate Joke</button>
+        </div>
+        <p id="response"></p>
+    </div>
 </section>
 <section id="ListOfCategories">
-    <h2>List of available categories:</h2>
-    <ul id="categoryList"></ul>
+    <div>
+        <h2>List of available categories:</h2>
+        <ul id="categoryList"></ul>
+    </div>
 </section>
 <section id="searchJokes">
-    <h2>Search Jokes:</h2>
-    <input type="text" placeholder="Enter word here..." id="searchWord"><button onclick="searchJoke()">Search Joke</button>
-    <p id="responseSearch"></p>
+    <div>
+        <h2>Search Jokes:</h2>
+        <input type="text" placeholder="Enter word here..." id="searchWord">
+        <button class="btnGenerate" onclick="searchJoke()">Search Joke</button>
+        <div id="responseSearch"></div>
+    </div>
 </section>
-<footer>Footer</footer>
+<footer>Izmir Rexhepi 1TPIF2 2022 &copy;</footer>
 
 </body>
 </html>

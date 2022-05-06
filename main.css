@@ -1,0 +1,183 @@
+* {
+    font-family: open-sans, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+}
+body{
+    background-color: #FCFCFC;
+}
+#AboutApi {
+    background-color: #41FFFF;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 30rem;
+}
+#AboutApi div {
+    display: flex;
+    height: 14rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+#AboutApi h1 {
+    font-size: 3rem;
+
+}
+#AboutApi p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+#AboutApi a {
+    font-size: 1.1rem;
+    background-color: #C00000;
+    border-radius: 2rem;
+    padding: 0.7rem;
+    color: #C1FFFF;
+}
+#AboutApi a:hover {
+    background-color: #A70000;
+}
+#response{
+    font-weight: 600;
+}
+
+nav#navigationBar ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+nav#navigationBar a {
+    color: black;
+    font-size: 1.5rem;
+}
+nav#navigationBar a:hover {
+    font-size: 1.6rem;
+}
+section#generateJokes {
+    display: flex;
+    height: 25rem;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+section#generateJokes div {
+    font-size: 1.15rem;
+    width: 37rem;
+}
+div#generateJokesContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+div#generateJokesContent label{
+    color: #C00000;
+}
+select#categories {
+    width: 14rem;
+    height: 1.9rem;
+    border: solid 0.05rem #C00000;
+    border-radius: 0.2rem;
+    color: #C00000;
+}
+button.btnGenerate {
+    padding: 0.5rem 1.1rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+    border: solid 0.1rem #C00000;
+    color: #C00000;
+    background: #FCFCFC;
+}
+button.btnGenerate:hover {
+    background-color: #EFEFEF;
+}
+h1{
+    font-family: open-sans, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+h2 {
+    font-family: open-sans-condensed, sans-serif;
+    font-weight: 525;
+    font-style: normal;
+}
+section#ListOfCategories h2 {
+    text-decoration: underline;
+}
+ul{
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    font-family: open-sans, sans-serif;
+    font-weight: 700;
+}
+section#ListOfCategories {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 5rem;
+}
+
+section#searchJokes {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+}
+section#searchJokes div{
+    margin: 2rem 5rem;
+}
+
+section#searchJokes div h2 {
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 1rem 0;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    background-color: #C00000;
+    color: #FCFCFC;
+}
+nav#navigationBar {
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    background-color: #C00000;
+}
+
+input#searchWord {
+    border: 0.1rem solid #C00000;
+    border-radius: 0.3rem;
+    height: 1.6rem;
+    width: 15rem;
+    font-size: 1rem;
+}
+
+div#responseSearch{
+   margin: 0!important;
+}
+
+div#responseSearch ol li {
+    padding: 0.5rem 0.5rem;
+}
